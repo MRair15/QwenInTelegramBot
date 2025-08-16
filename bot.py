@@ -182,9 +182,16 @@ def get_ai_response(prompt, user_id):
         if is_code_request:
             # Для кода используем специализированную модель
             models_to_try = [
-                "qwen/qwen3-coder:free",
-                "meta-llama/llama-3.3-70b-instruct:free",
-                "google/gemma-3-27b-it:free"
+    "meta-llama/llama-3.3-70b-instruct:free", # Очень популярная и мощная бесплатная модель.
+    "nousresearch/hermes-3-llama-3.1-405b:free", # Высококачественная модель с улучшенными инструкциями.
+    "neversleep/llama-3.1-lumimaid-70b:free", # Альтернатива Llama 3.1 70B.
+    "microsoft/wizardlm-2-7b:free", # Хорошая модель от Microsoft, меньший размер.
+    "google/gemma-2-27b-it:free", # Мощная модель Gemma 2 от Google.
+    "google/gemma-2-9b-it:free", # Более легкая версия Gemma 2.
+    "meta-llama/llama-3-70b-instruct:free", # Предыдущая версия Llama 3, 70B.
+    "meta-llama/llama-3-8b-instruct:free", # Легкая версия Llama 3, 8B.
+    "mistralai/mistral-7b-instruct:free", # Классическая модель Mistral 7B.
+    "openchat/openchat-7b:free", # Другая популярная 7B модель.
             ]
             system_prompt = """Ты Qwen Coder, специализированная модель для программирования.
 Ты должен писать только рабочий, протестированный код.
@@ -195,9 +202,16 @@ def get_ai_response(prompt, user_id):
         else:
             # Для обычных запросов используем общую модель
             models_to_try = [
-                "qwen/qwen3-235b-a22b:free",
-                "qwen/qwen2-72b-instruct:free",
-                "qwen/qwen3-30b-a3b:free"
+    "meta-llama/llama-3.3-70b-instruct:free", # Очень популярная и мощная бесплатная модель.
+    "nousresearch/hermes-3-llama-3.1-405b:free", # Высококачественная модель с улучшенными инструкциями.
+    "neversleep/llama-3.1-lumimaid-70b:free", # Альтернатива Llama 3.1 70B.
+    "microsoft/wizardlm-2-7b:free", # Хорошая модель от Microsoft, меньший размер.
+    "google/gemma-2-27b-it:free", # Мощная модель Gemma 2 от Google.
+    "google/gemma-2-9b-it:free", # Более легкая версия Gemma 2.
+    "meta-llama/llama-3-70b-instruct:free", # Предыдущая версия Llama 3, 70B.
+    "meta-llama/llama-3-8b-instruct:free", # Легкая версия Llama 3, 8B.
+    "mistralai/mistral-7b-instruct:free", # Классическая модель Mistral 7B.
+    "openchat/openchat-7b:free", # Другая популярная 7B модель.
             ]
             system_prompt = """Ты Qwen, продвинутая языковая модель.
 Будь полезным, точным и дружелюбным.
